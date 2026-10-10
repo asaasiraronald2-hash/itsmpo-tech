@@ -1,0 +1,435 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="itsmpo is an African technology company building practical digital products for businesses and communities.">
+  <title>itsmpo | Technology for Everyday Life</title>  <style>
+    :root {
+      --orange: #f36b21;
+      --dark: #171717;
+      --gray: #666666;
+      --light: #f7f7f7;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #eeeeee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 21px;
+      border-radius: 7px;
+      background: var(--orange);
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #ffffff, #fff5ef);
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+      margin-bottom: 23px;
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(29px, 5vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+    }
+
+    .products {
+      background: var(--light);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #eeeeee;
+      border-radius: 12px;
+      padding: 25px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px #0000000b;
+    }
+
+    .product-number {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .product-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .product-card a {
+      color: var(--orange);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+
+    .about-panel {
+      background: var(--dark);
+      color: white;
+      border-radius: 15px;
+      padding: 35px;
+    }
+
+    .about-panel h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .about-panel p {
+      color: #d0d0d0;
+    }
+
+    .contact {
+      background: #fff5ef;
+      text-align: center;
+    }
+
+    .contact .section-heading {
+      margin: 0 auto 25px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 28px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    footer p {
+      color: #c6c6c6;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .nav-links .button {
+        padding: 9px 12px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        min-height: 65px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:nth-child(1),
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style></head><body>  <header>
+    <nav class="container">
+      <a href="#" class="logo">itsmpo<span>.</span></a>  <div class="nav-links">
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="button">Contact</a>
+  </div>
+</nav>
+
+  </header>  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">An African technology company</div>    <h1>Technology that makes everyday life easier.</h1>
+
+    <p>
+      We build practical digital products that connect people,
+      simplify business and create opportunities across Africa.
+    </p>
+
+    <a href="#products" class="button">Explore our products</a>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Our ecosystem</div>
+      <h2>One vision. Multiple solutions.</h2>
+      <p>
+        Discover the digital products we're building to solve
+        everyday challenges for businesses and communities.
+      </p>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product-card">
+        <div class="product-number">PRODUCT 01</div>
+        <h3>Mpolaa</h3>
+        <p>A smartphone marketplace connecting buyers with independent phone sellers.</p>
+        <a href="https://mpolaa.com">Explore Mpolaa ↗</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-number">PRODUCT 02</div>
+        <h3>Mpoberry</h3>
+        <p>Business management and point-of-sale tools for modern businesses.</p>
+        <a href="#contact">Discover Mpoberry ↗</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-number">PRODUCT 03</div>
+        <h3>Mpovet</h3>
+        <p>A veterinary marketplace connecting animal owners with veterinary professionals.</p>
+        <a href="#contact">Discover Mpovet ↗</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-number">PRODUCT 04</div>
+        <h3>Gaaju</h3>
+        <p>A convenient way to connect customers with milk, groceries and local shops.</p>
+        <a href="#contact">Discover Gaaju ↗</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-number">PRODUCT 05</div>
+        <h3>Ntuse</h3>
+        <p>A mobility concept designed to help people estimate boda fares and distances.</p>
+        <a href="#contact">Discover Ntuse ↗</a>
+      </article>
+
+      <article class="product-card">
+        <div class="product-number">PRODUCT 06</div>
+        <h3>Eka</h3>
+        <p>A private digital space for families to preserve connections and heritage.</p>
+        <a href="#contact">Discover Eka ↗</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-content">
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2>Building useful technology for Africa.</h2>
+      <p>
+        itsmpo is a technology company developing digital products
+        for commerce, business operations, animal health, delivery,
+        mobility and family connections.
+      </p>
+      <p>
+        Our focus is simple: build accessible, practical technology
+        around the real needs of the people who use it.
+      </p>
+    </div>
+
+    <div class="about-panel">
+      <h3>Our mission</h3>
+      <p>
+        To develop technology that simplifies everyday activities,
+        supports businesses and connects communities through
+        useful digital experiences.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Let's connect</div>
+      <h2>Have a question or want to work with us?</h2>
+      <p>
+        Get in touch to discuss our products, partnerships
+        and technology opportunities.
+      </p>
+    </div>
+
+    <a href="mailto:hello@itsmpo.com" class="button">
+      Email itsmpo
+    </a>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container footer-content">
+      <a href="#" class="logo">itsmpo<span>.</span></a>
+      <p>© <span id="year"></span> itsmpo. All rights reserved.</p>
+      <p>Technology for everyday life.</p>
+    </div>
+  </footer>  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script></body>
+</html>
